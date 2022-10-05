@@ -1,13 +1,13 @@
-name: learn-github-actions
+name: learn-github-actions # comment
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+on: [push]  # specify the trigger for this workflow
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v3 #run v3, this allows us to run script or actions for our code
+      - uses: actions/setup-node@v3 # action to install/use node
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: npm install -g bats # execute a command on the runner
+      - run: bats -v # presents software version
