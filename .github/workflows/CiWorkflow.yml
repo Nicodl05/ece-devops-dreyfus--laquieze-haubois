@@ -10,7 +10,7 @@ on:
 defaults:
     run:
         shell: bash
-        working-directory: ./TP3
+        working-directory: ./tp4
 jobs:
   build:
 
