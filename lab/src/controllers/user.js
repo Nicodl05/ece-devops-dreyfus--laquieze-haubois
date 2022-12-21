@@ -1,5 +1,4 @@
 const db = require('../dbClient')
-const db = require('../dbClient')
 
 module.exports = {
   create: (user, callback) => {
