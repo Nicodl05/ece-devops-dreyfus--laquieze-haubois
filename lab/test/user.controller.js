@@ -3,7 +3,6 @@ const userController = require('../src/controllers/user')
 const db = require('../src/dbClient')
 
 describe('User', () => {
-  
   beforeEach(() => {
     // Clean DB before each test
     db.flushdb()
