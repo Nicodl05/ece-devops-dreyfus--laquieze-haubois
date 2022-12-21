@@ -1,0 +1,10 @@
+- name: Check GitLab liveness
+  uri:
+    url: http://127.0.0.1/-/liveness
+    return_content: yes
+  # Register the output of the module in a variable
+  register: gitlab_liveness
+
+- name: Print GitLab liveness
+  debug:
+    msg: "{{ gitlab_liveness.content }}"

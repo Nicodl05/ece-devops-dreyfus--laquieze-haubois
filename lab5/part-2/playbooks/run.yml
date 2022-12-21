@@ -9,3 +9,11 @@
 
   - role: gitlab/healthchecks
     tags: check
+
+  - role: gitlab/readiness
+    tags: check
+
+  - role: gitlab/liveness
+    tags: check
+
+
