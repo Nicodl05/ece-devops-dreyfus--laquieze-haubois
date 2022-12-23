@@ -1,16 +1,25 @@
 version: "3"
 services:
+
   redis:
     image: redis
-  web:
-    # COMPLETE HERE
-    build: .
-    ports:
-      - "5000:3000"
-    environment:
-      - REDIS_HOST=redis
-    volumes:
-      - .:/app
-      - /app/node_modules
+
+  userapi:
+    image: teepol/userapi
     depends_on:
       - redis
+    ports:
+      - "3000:3000"
+
+  # web:
+    # COMPLETE HERE
+  #  build: .
+  #  ports:
+   #   - "3000:3000"
+  #  environment:
+  #    - REDIS_HOST=redis
+  #  volumes:
+  #    - .:/userapi
+   #   - /userapi/node_modules
+   # depends_on:
+   #   - redis
