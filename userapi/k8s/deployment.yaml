@@ -15,8 +15,12 @@ spec:
       labels:
         app: devops
     spec:
-      containers:
-      - name: devops
-        image: teepol/userapi
-        ports:
-          - containerPort: 3000
+        containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
+        - name: devops
+          image: teepol/userapi
+          ports:
+              - containerPort: 3000
