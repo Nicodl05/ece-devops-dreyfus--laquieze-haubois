@@ -40,9 +40,16 @@
     state: started
     enabled: yes
 
-- name: Download Redis install script
-  script: yum install redis
-// script to execute redis cli
+- name: Download GitLab install script
+  get_url:
+    url: https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh
+    dest: /tmp/script.rpm.sh
 
-- name: Execute Redis install script
-  script: systemctl start redis-server
+- name: Execute GitLab install script
+  script: /tmp/script.rpm.sh
+
+- name: Install GitLab
+  yum:
+    name: gitlab-ee
+  environment:
+    EXTERNAL_URL: http://gitlab.local

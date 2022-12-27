@@ -14,14 +14,14 @@
 #   retries: 2
 # END OF OPTIONAL TASKS
 
-- name: Check Redis health
+- name: Check Gitlab health
   uri:
     url: http://127.0.0.1/-/health
     return_content: yes
   # Register the output of the module in a variable
-  register: redis_health
+  register: gitlab_health
 
-- name: Print Redis health
+- name: Print Gitlab health
   debug:
-    msg: "{{ redis_health.content }}"
+    msg: "{{ gitlab.content }}"
 # Run the 2 other kind of health checks below
