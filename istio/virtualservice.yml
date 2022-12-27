@@ -1,19 +1,40 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: devops-service
+  name: devops-virtual
 spec:
   hosts:
   - "*"
   gateways:
-  - devopsgateway
+  - devops-gateway
   http:
-  - match:
-    - uri:
-      port: http
-    route:
-    - destination:
-      host: devops
-      port:
-        number: 80
+    - name: "devops-service-v1"
+      match:
+        - uri:
+            prefix: /v1/
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            host: devops-service
+            subset: v1
+            port:
+              number: 3000
+    - name: "devops-service"
+      match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: devops-service
+            subset: v1
+            port:
+              number: 3000
+          weight: 50
+
+  #  route:
+  #  - destination:
+  #    host: devops
+  #    port:
+  #      number: 80
 

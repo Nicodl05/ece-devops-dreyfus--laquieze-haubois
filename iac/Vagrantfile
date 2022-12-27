@@ -18,20 +18,17 @@ Vagrant.configure("2") do |config|
   end
 
 
-  # Define the nodejs_server VM
-  config.vm.define "nodejs_server" do |server|
+  # Define the gitlab_server VM
+  config.vm.define "redis_server" do |server|
     # Specify the Vagrant box to use
-    server.vm.box = "hashicorp/bionic64"
-    # Share an additional folder to the guest VM. The first argument is
-    # the path on the host to the actual folder. The second argument is
-    # the path on the guest to mount the folder. And the optional third
-    # argument is a set of non-required options.
-    config.vm.synced_folder "../userapi", "/home/userapi"
-    # Specify the VM ip address
-    server.vm.network :"forwarded_port", guest: 80, host: 8080
+    server.vm.box = "centos/7"
+    # Specify the VM ip addres
+    #config.vm.synced_folder "../userapi", "/home/userapi"
+    #
+    config.vm.network "forwarded_port", guest: 80, host: 8080
     # Specify the VM specs when using the Virtualbox provisioner
     server.vm.provider "virtualbox" do |vb|
-      vb.name =  "nodejs.server.local"
+      vb.name =  "redis.server.local"
       # VM RAM in MB
       vb.memory = 2048
       # VM CPUs
@@ -53,7 +50,7 @@ Vagrant.configure("2") do |config|
     # The path to the playbooks entry point
     ansible.playbook = "playbooks/run.yml"
     # Only run the roles with these tags
-    ansible.tags = "install"
+    ansible.tags = ["install", "check"]
   end
 end
 

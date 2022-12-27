@@ -1,1 +1,0 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/nicodl/Documents/Devops/ece-devops-dreyfus--laquieze-haubois/userapi/iac","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}

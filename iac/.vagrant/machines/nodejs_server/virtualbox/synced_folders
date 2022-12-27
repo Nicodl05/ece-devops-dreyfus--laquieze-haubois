@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/userapi":{"guestpath":"/home/userapi","hostpath":"/home/teepol/Documents/DevOps/ece-devops-dreyfus--laquieze-haubois/userapi","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/teepol/Documents/DevOps/ece-devops-dreyfus--laquieze-haubois/iac","disabled":false,"__vagrantfile":true}}}

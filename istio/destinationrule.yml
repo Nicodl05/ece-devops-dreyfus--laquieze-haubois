@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: devops
+  name: devops-destination
 spec:
-  host: devops-service
+  host: devops-virtual
 
