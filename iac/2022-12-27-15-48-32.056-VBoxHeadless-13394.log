@@ -1,0 +1,12 @@
+Log created: 2022-12-27T15:48:32.568472000Z
+Process ID:  13394 (0x3452)
+Parent PID:  1682 (0x692)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: redis.server.local
+Arg[3]: --startvm
+Arg[4]: c73831af-cf9b-4d76-b28d-354bb251ebc2
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
