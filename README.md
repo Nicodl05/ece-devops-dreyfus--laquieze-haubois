@@ -11,7 +11,8 @@ Etudiants:
 Promotion 2024 SI TD 4
 
 ---
-# Projet DevOps
+
+## Projet DevOps
 
 L'objectif de ce projet est d'implémenter des des outils utilisant des notions du cycle DevOps. Cela débute avec une application basé sur Nodejs avec l'utilisation d'une base de données Redis pour stocker les données, mais aussi de réaliser des tests.
 
@@ -31,31 +32,27 @@ Notre application réalisée avec [NodeJS](https://nodejs.org/en/) utilise une b
 
 1. [Lien pour installer NodeJS](https://nodejs.org/en/download/)
 2. [Lien pour  Redis](https://redis.io/download) (Ne pas hésiter à chercher des tutos pour l'installation en cas de problème)
-    
+
 ### Installation de notre application
 
-Il faut aller dans le dossier `userapi/` et lancer la commande suivante: 
+Il faut aller dans le dossier `userapi/` et lancer la commande suivante:
 
-
+```bash
+npm install
 ```
-npm install 
-```
 
-Par la suite, pour lancer notre server web, il faut effectuer la commande : 
+Par la suite, pour lancer notre server web, il faut effectuer la commande :
 
-```
+```bash
 npm run start
 ```
 
-Cela devrait normalement lancer l'application web à l'adresse: http://localhost:3000/
-
-
-
-
+Cela devrait normalement lancer l'application web à l'adresse: <http://localhost:3000/>
 
 ## 2. CI/CD Pipeline
 
 ### Intégration Continue: CI
+
 Nous avons mis en place une intégration continue des workflow grâce à [GitHub Actions](https://docs.github.com/fr/actions)
 Avant chaque déploiement, des test sont réalisés pour s'assurer que le code fonctionne bien
 
@@ -78,13 +75,12 @@ Pour ce projet, nous avons utilisé [Vagrant](https://www.vagrantup.com/) pour l
 
 Il faut aller dans le dossier `\iac` et lancer les commandes suivantes
 
-```
-vagrant init  
+```bash
+vagrant init
 vagrant up
 ```
 
-A présent que la VM est lancée, 
-
+A présent que la VM est lancée,
 
 ## 4. Image Docker de notre application
 
@@ -94,11 +90,11 @@ Nous avons créé une image Docker de notre application.
 
 - [Installer Docker](https://www.docker.com)
 
-### Utilisation
+#### Utilisation
 
 Pour lu'itilisation de Docker, il faut réaliser la commande suivante:
 
-```
+```bash
 docker build machin truc
 ```
 
@@ -108,21 +104,25 @@ On peut aussi observer notre image docker sur Docker Desktop.
 
 Pour vérifier nos images docker, il faut saisir la commande suivante:
 
-```
+```bash
 docker images
 ```
 
 Par la suite pour lancer le `container`:
-```
+
+```bash
 docker run -p ...
 ```
 
-Pur observer si tout fonctionne correctement et que le `container` est toujours en cours d'exécution. La commande à saisir est:
-```
+Pur observer si tout fonctionne correctement et que le `container` est toujours en cours d'exécution. La commande à saisir est :
+
+```bash
 docker ps
 ```
+
 Pour arrêter le `container`, la commande à saisir est:
-```
+
+```bash
 docker stop <container_id>
 ```
 
@@ -139,12 +139,12 @@ docker stop <container_id>
 ### Pour les phases de test
 
 A partir de la racine du projet, lorsque nous exécutons la commande suivante:
-```
+
+```bash
 npm run test
 ```
+
 Les différents tests dans notre projet devraient être réussis comme sur la capture d'écran ci-dessous.
-
-
 
 Pour Istio : `export PATH=$PATH:/home/teepol/istio-1.16.0/bin` ce chemin ne marche que dans le terminal où la commande à été executé et pas dans un autre terminal.
 
