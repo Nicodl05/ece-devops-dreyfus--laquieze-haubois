@@ -65,7 +65,7 @@ La réponse attendue est :
 {"status":"success","msg":"OK"}
 ```
 
-Pour vérifier l'ajout de l'utilisateur il suffit d'aller à l'adresse [http://localhost:3000/user/sergkudinov](http://localhost:3000/user/sergkudinov), et on attent le message suivant:
+Pour vérifier l'ajout de l'utilisateur il suffit d'aller à l'adresse [http://localhost:3000/user/sergkudinov](http://localhost:3000/user/sergkudinov), et on attend le message suivant:
 
 ```bash
 status "success"
@@ -82,22 +82,23 @@ Toujours dans le dossier `userapi/` pour tester l'application il faut lancer la 
 npm test
 ```
 
-Il devrait y avoir 12 test qui sont exécuté avec succès.
+Il devrait y avoir 12 tests qui sont exécutés avec succès.
 ![capture-namespace](image/testing.png)
 
-Si certain test ne passe pas il faut vérifier en priorité si le serveur redis est bien lancé.
+Si certains tests ne passent pas, il faut vérifier en priorité si le serveur redis est bien lancé.
 
 ## 2. CI/CD Pipeline
 
 ### Intégration Continue: CI
 
 Nous avons mis en place une intégration continue des workflow grâce à [GitHub Actions](https://docs.github.com/fr/actions)
-Avant chaque déploiement, des test sont réalisés pour s'assurer que le code fonctionne bien et qu'il n'y a pas de conflits
+Avant chaque déploiement, des tests sont réalisés pour s'assurer que le code fonctionne bien et qu'il n'y a pas de conflits.
 
 ### Déploiement Continu: CD
 
 Nous avons mis en place le déploiement continu avec [Azure](https://azure.microsoft.com/fr-fr/)
 Cela nous permet d'avoir un apercu de notre projet.
+<https://dreyfus-haubois-devops.azurewebsites.net/>
 
 ## 3. Configuration de l'environnement virtuel avec IAC
 
@@ -133,7 +134,7 @@ vagrant ssh
 
 Maintenant que nous sommes connectés à la VM, nous voulons vérifier si le dossier `userapi/` est bien présent.
 
-Pour le vérifiez on va exécuté la série de commande suivante:
+Pour le vérifiez on va exécuter la série de commande suivante:
 
 ```bash
 cd ../..
@@ -200,7 +201,7 @@ docker stop <container_id>
 
 ## 5. Utilisation des container via Docker Compose
 
-L'image que nous avons créé avec le Dockerfile nous permet de lancer notre application mais elle ne contient pas la base de donnée redis. Docker Compose nous permet de lancer plusieurs conteneur, cela nous permet d'utiliser notre application avec la base de donnée. On veut donc lancer notre fichier `docker-compose.yaml` Pour cela il faut éxecuter la commande:
+L'image que nous avons créé avec le Dockerfile nous permet de lancer notre application mais elle ne contient pas la base de donnée redis. Docker Compose nous permet de lancer plusieurs conteneurs, cela nous permet d'utiliser notre application avec la base de données. On veut donc lancer notre fichier `docker-compose.yaml` Pour cela il faut exécuter la commande:
 
 ```bash
 docekr-compose up
