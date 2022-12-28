@@ -210,30 +210,6 @@ docekr-compose up
 En allant à l'adresse [http://localhost:3000/](http://localhost:3000/) on voit la page suivante:
 ![capture-namespace](image/docker_images.png)
 
-Pour essayez notre application vous pouvez créer un utilisateur en envoyant une requête.
-
-```bash
-curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
-  http://localhost:3000/user
-```
-
-La réponse attendue est :
-
-```bash
-{"status":"success","msg":"OK"}
-```
-
-Pour vérifier l'ajout de l'utilisateur il suffit d'aller à l'adresse [http://localhost:3000/user/sergkudinov](http://localhost:3000/user/sergkudinov), et on attend le message suivant:
-
-```bash
-status "success"
-msg
-firstname "sergei"
-lastname "kudinov"
-```
-
 On peut ensuite supprimer nos conteneurs avec la commande:
 
 ```bash
