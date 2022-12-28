@@ -224,7 +224,7 @@ La réponse attendue est :
 {"status":"success","msg":"OK"}
 ```
 
-Pour vérifier l'ajout de l'utilisateur il suffit d'aller à l'adresse [http://localhost:3000/user/sergkudinov](http://localhost:3000/user/sergkudinov), et on attent le message suivant:
+Pour vérifier l'ajout de l'utilisateur il suffit d'aller à l'adresse [http://localhost:3000/user/sergkudinov](http://localhost:3000/user/sergkudinov), et on attend le message suivant:
 
 ```bash
 status "success"
@@ -251,7 +251,7 @@ minikube start
 
 Pour utiliser kubernetes il faut d'abord aller dans le dossier `k8s`.
 
-Ensuite on exécute la commende suivante pour tous les fichiers présents dans le dossier `k8s`.
+Ensuite on exécute la commande suivante pour tous les fichiers présents dans le dossier `k8s`.
 
 ```bash
 kubectl apply -f <file_name.yaml>
@@ -266,7 +266,7 @@ kubectl get pv
 kubectl get pvc
 ```
 
-On peut maintenant se connecter à l'application avec en cherchant l'adresse ip avec:
+On peut maintenant se connecter à l'application en cherchant l'adresse ip avec:
 
 ```bash
 minikube ip
