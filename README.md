@@ -177,7 +177,7 @@ Pour vérifier nos images docker, il faut saisir la commande suivante:
 docker images
 ```
 
-Par la suite pour lancer le `container` il afut exécuter la commande:
+Par la suite pour lancer le `container` il faut exécuter la commande:
 
 ```bash
 docker run -p 3000:3000 -d teepol/userapi
